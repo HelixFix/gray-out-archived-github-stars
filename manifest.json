@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "GitHub Starred Repos",
+  "version": "1.0.0",
+  "description": "Applies gray color to archived starred GitHub repositories",
+  "permissions": [
+    "https://github.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
