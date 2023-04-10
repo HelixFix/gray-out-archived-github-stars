@@ -1,4 +1,4 @@
-# Github Starred Repository Archiver
+#  Gray Out Archived Github Stars
 
 Cette extension de navigateur permet de mettre en évidence les dépôts GitHub archivés parmi les dépôts étoilés d'un utilisateur en les affichant en gris. Cette fonctionnalité permet de mieux gérer les dépôts inactifs et facilite la recherche de projets actifs dans la liste des dépôts étoilés.
 
