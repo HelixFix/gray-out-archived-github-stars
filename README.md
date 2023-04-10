@@ -1,6 +1,7 @@
 ##Github Starred Repository Archiver
 
-Cette extension de navigateur permet de mettre en évidence les dépôts GitHub archivés parmi les dépôts étoilés d'un utilisateur en les affichant en gris. Cette fonctionnalité permet de mieux gérer les dépôts inactifs et facilite la recherche de projets actifs dans la liste des dépôts étoilés.#Installation
+Cette extension de navigateur permet de mettre en évidence les dépôts GitHub archivés parmi les dépôts étoilés d'un utilisateur en les affichant en gris. Cette fonctionnalité permet de mieux gérer les dépôts inactifs et facilite la recherche de projets actifs dans la liste des dépôts étoilés.
+#Installation
 
     Téléchargez le code source de cette extension de navigateur à partir de ce dépôt
     Ouvrez votre navigateur Chrome ou Firefox
