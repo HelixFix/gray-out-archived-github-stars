@@ -1,5 +1,5 @@
 // fonction principale qui effectue le traitement sur les dépôts archivés.
-async function applyGrayToArchivedRepos() {
+async function applyWarningToArchivedRepos() {
     let cache        = getRepoCache();
     let starredRepos = getStarredRepos();
   for (const element of starredRepos) {
@@ -8,7 +8,7 @@ async function applyGrayToArchivedRepos() {
       let repoUrl = repoName.href;
 
       if (isRepoArchived(repoUrl, cache)) {
-        repoName.style.color = "gray";
+        applyWarningToRepoBlock(repoName)
       } else {
         try {
           const response = await fetch(repoUrl);
@@ -17,13 +17,20 @@ async function applyGrayToArchivedRepos() {
           let isArchived = checkIfRepoArchived(html);
 
           if (isArchived) {
-            repoName.style.color = "gray";
+            applyWarningToRepoBlock(repoName)
           }
 
           updateRepoCache(repoUrl, isArchived, cache);
         } catch (error) {}
       }
     }
+  }
+}
+
+function applyWarningToRepoBlock(repoName) {
+  const parentDiv = repoName.closest('.col-12.d-block.width-full.py-4.border-bottom.color-border-muted');
+  if (parentDiv) {
+    parentDiv.classList.add('flash-warn');
   }
 }
 
@@ -73,11 +80,11 @@ function updateRepoCache(repoUrl, isArchived, cache) {
 let isFunctionActivated = 0;
 let timerId;
 
-// /Lorsque la fonction applyGrayToArchivedRepos () est exécutée, la variable isFunctionActivated doit s'incrémenter de 1
+// /Lorsque la fonction applyWarningToArchivedRepos () est exécutée, la variable isFunctionActivated doit s'incrémenter de 1
 function checkFunctionActivation() {
   if (isFunctionActivated < 2) {
     if (window.location.search.includes("tab=stars")) {
-      applyGrayToArchivedRepos();
+      applyWarningToArchivedRepos();
       isFunctionActivated++;
       console.log("isFunctionActivated = ", isFunctionActivated);
     }
